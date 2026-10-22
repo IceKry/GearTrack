@@ -3,6 +3,7 @@ import { config } from "dotenv";
 import morgan from "morgan";
 import helmet from "helmet";
 import cors from "cors";
+import clientRoutes from "../src/Client/client.routes.js";
 
 //* Configs Servidor
 const app = express();
@@ -17,6 +18,7 @@ app.use(helmet());
 app.use(morgan("dev"));
 
 //* Rutas
+app.use("/client", clientRoutes);
 
 //* Inicializar Servidor
 export const initServer = async () => {

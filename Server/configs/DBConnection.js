@@ -1,4 +1,7 @@
 import { Pool } from "pg";
+import { config } from "dotenv";
+
+config()
 
 //* Crear el pool usando la URL de conexión de neon
 export const pool = new Pool({
@@ -14,6 +17,7 @@ export const testConnection = async () => {
     const res = await pool.query("SELECT NOW()");
     console.log("Conexión Exitosa con Neon PostgreSQL: ", res.rows[0].now);
   } catch (error) {
-    console.error("Error al conectar con Neon PostgreSQL: ", error.message);
+    console.error("Error al conectar con Neon PostgreSQL",);
+    console.error(error);
   }
 };
