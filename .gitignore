@@ -1,0 +1,5 @@
+# Dependencias Servidor
+Server/node_modules/
+
+# Variables de Entorno
+Server/.env
